@@ -6,6 +6,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import helmet from 'helmet'
 import { isTest } from '../env.ts'
+import { authenticateToken } from './middleware/auth.ts'
 
 const app = express()
 app.use(helmet())
