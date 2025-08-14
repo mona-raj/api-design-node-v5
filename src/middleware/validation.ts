@@ -9,6 +9,7 @@ export const validateBody = (schema: ZodSchema) => {
       next()
     } catch (e) {
       if (e instanceof ZodError) {
+        console.log(e)
         return res.status(400).json({
           error: 'Validation failed',
           details: e.issues.map((err) => ({

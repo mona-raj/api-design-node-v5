@@ -12,7 +12,7 @@ const createHabitSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
   frequency: z.string(),
-  targetCount: z.number(),
+  targetCount: z.string(),
   tagIds: z.array(z.string()).optional(),
 })
 
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
 router.post('/', validateBody(createHabitSchema), createHabit)
 
 router.delete('/:id', (req, res) => {
-  res.json({ message: 'deleted habit' })
+  res.json({ message: 'dele ted habit' })
 })
 
 router.post(
